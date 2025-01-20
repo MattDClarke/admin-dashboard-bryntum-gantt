@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="p-8">
       <h1 className="text-2xl font-handwritten mb-8 text-foreground">Sales</h1>
-      <div className="w-full h-[400px] bg-card rounded-xl p-4 border">
+      <div className="w-full h-[400px] bg-card rounded-xl p-4 border border-border">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <CartesianGrid 
@@ -65,7 +65,7 @@ const Dashboard = () => {
       </div>
       
       <h2 className="text-2xl font-handwritten mt-8 mb-4 text-foreground">Project planning</h2>
-      <div className="bg-card rounded-xl p-4 border h-64">
+      <div className="bg-card rounded-xl p-4 border border-border h-64">
         {/* Project planning content will go here in future iterations */}
       </div>
     </div>

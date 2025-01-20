@@ -16,17 +16,17 @@ export const Sidebar = () => {
   return (
     <aside
       className={cn(
-        "h-screen bg-white border-r px-4 pt-8 pb-4 transition-all duration-300",
+        "h-screen bg-background border-r border-border px-4 pt-8 pb-4 transition-all duration-300",
         expanded ? "w-64" : "w-20"
       )}
     >
       <div className="flex justify-between items-center mb-8 px-2">
         {expanded && (
-          <h2 className="font-handwritten text-xl">Company name</h2>
+          <h2 className="font-handwritten text-xl text-foreground">Company name</h2>
         )}
         <button
           onClick={() => setExpanded((curr) => !curr)}
-          className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+          className="p-1.5 rounded-lg bg-muted hover:bg-muted/80 text-muted-foreground"
         >
           <Menu size={20} />
         </button>
@@ -40,8 +40,8 @@ export const Sidebar = () => {
             className={({ isActive }) =>
               cn(
                 "flex items-center gap-4 px-3 py-2 rounded-lg transition-colors",
-                "hover:bg-gray-100",
-                isActive ? "text-blue-600 bg-blue-50 hover:bg-blue-50" : "text-gray-500"
+                "hover:bg-muted",
+                isActive ? "text-primary bg-muted" : "text-muted-foreground"
               )
             }
           >

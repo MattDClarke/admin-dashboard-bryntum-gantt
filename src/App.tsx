@@ -20,7 +20,7 @@ const App = () => {
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <TooltipProvider>
           <BrowserRouter>
-            <div className="flex h-screen bg-background">
+            <div className="flex h-screen bg-background text-foreground">
               <Sidebar />
               <div className="flex-1 flex flex-col overflow-hidden">
                 <Header />

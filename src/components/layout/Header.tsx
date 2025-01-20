@@ -6,14 +6,14 @@ export const Header = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <header className="h-16 border-b bg-background px-4 flex items-center justify-between">
+    <header className="h-16 border-b border-border bg-background px-4 flex items-center justify-between">
       <div className="w-96">
         <div className="relative">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search"
-            className="w-full bg-muted/50 pl-9 pr-4 py-2 rounded-lg border-none focus:ring-2 focus:ring-ring"
+            className="w-full bg-muted/50 pl-9 pr-4 py-2 rounded-lg border-none focus:ring-2 focus:ring-ring text-foreground placeholder:text-muted-foreground"
           />
         </div>
       </div>
