@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-handwritten mb-8 text-foreground">Sales</h1>
+      <h1 className="text-2xl font-handwritten mb-8 text-foreground">Monthly sales</h1>
       <div className="w-full h-[400px] bg-card rounded-xl p-4 border border-border">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
