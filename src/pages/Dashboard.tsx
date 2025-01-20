@@ -26,7 +26,10 @@ const Dashboard = () => {
       <div className="w-full h-[400px] bg-card rounded-xl p-4 border">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke={isDark ? '#374151' : '#e5e7eb'} />
+            <CartesianGrid 
+              strokeDasharray="3 3" 
+              stroke={isDark ? '#374151' : '#e5e7eb'} 
+            />
             <XAxis 
               dataKey="month" 
               stroke={isDark ? '#9ca3af' : '#6b7280'}
