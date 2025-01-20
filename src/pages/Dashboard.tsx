@@ -1,4 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useTheme } from 'next-themes';
 
 const data = [
   { month: 'Jan', '2023': 400, '2024': 240 },
@@ -16,16 +17,31 @@ const data = [
 ];
 
 const Dashboard = () => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-handwritten mb-8">Sales</h1>
-      <div className="w-full h-[400px] bg-white rounded-xl p-4 border">
+      <h1 className="text-2xl font-handwritten mb-8 text-foreground">Sales</h1>
+      <div className="w-full h-[400px] bg-card rounded-xl p-4 border">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
-            <Tooltip />
+            <CartesianGrid strokeDasharray="3 3" stroke={isDark ? '#374151' : '#e5e7eb'} />
+            <XAxis 
+              dataKey="month" 
+              stroke={isDark ? '#9ca3af' : '#6b7280'}
+            />
+            <YAxis
+              stroke={isDark ? '#9ca3af' : '#6b7280'}
+            />
+            <Tooltip 
+              contentStyle={{ 
+                backgroundColor: isDark ? '#1f2937' : '#ffffff',
+                border: '1px solid',
+                borderColor: isDark ? '#374151' : '#e5e7eb',
+                color: isDark ? '#ffffff' : '#000000'
+              }}
+            />
             <Legend />
             <Line
               type="monotone"
@@ -45,8 +61,8 @@ const Dashboard = () => {
         </ResponsiveContainer>
       </div>
       
-      <h2 className="text-2xl font-handwritten mt-8 mb-4">Project planning</h2>
-      <div className="bg-white rounded-xl p-4 border h-64">
+      <h2 className="text-2xl font-handwritten mt-8 mb-4 text-foreground">Project planning</h2>
+      <div className="bg-card rounded-xl p-4 border h-64">
         {/* Project planning content will go here in future iterations */}
       </div>
     </div>
