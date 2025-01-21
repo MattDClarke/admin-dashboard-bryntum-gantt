@@ -19,8 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
-        handwritten: ["Architects Daughter", "cursive"],
+        sans: ["Montserrat", "sans-serif"]
       },
       colors: {
         border: "hsl(var(--border))",

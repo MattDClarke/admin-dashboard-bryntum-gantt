@@ -16,13 +16,13 @@ export const Sidebar = () => {
   return (
     <aside
       className={cn(
-        "h-screen bg-background border-r border-border px-4 pt-8 pb-4 transition-all duration-300",
+        "h-screen bg-background border-r border-border px-4 pt-4 pb-4 transition-all duration-300",
         expanded ? "w-64" : "w-20"
       )}
     >
       <div className="flex justify-between items-center mb-8 px-2">
         {expanded && (
-          <h2 className="font-handwritten text-xl text-foreground">Company name</h2>
+          <h2 className="text-xl text-foreground">Company name</h2>
         )}
         <button
           onClick={() => setExpanded((curr) => !curr)}
