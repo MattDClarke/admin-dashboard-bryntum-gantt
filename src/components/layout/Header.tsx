@@ -1,6 +1,7 @@
 import { Search, User, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { DomHelper } from "@bryntum/gantt";
 
 export const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -22,7 +23,10 @@ export const Header = () => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onClick={() => {
+            DomHelper.setTheme(theme === "dark" ? "classic-light" : "classic-dark");
+            setTheme(theme === "dark" ? "light" : "dark");
+          }}
           className="rounded-full"
         >
           <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

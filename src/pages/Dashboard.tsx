@@ -1,5 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useTheme } from 'next-themes';
+import Gantt from '@/components/ui/gantt';
+import { DomHelper } from '@bryntum/gantt';
 
 const data = [
   { month: 'Jan', '2023': 400, '2024': 240 },
@@ -19,10 +21,10 @@ const data = [
 const Dashboard = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-
+  DomHelper.setTheme(isDark ? "classic-dark" : "classic-light");
   return (
     <div className="p-8">
-      <h1 className="text-2xl  mb-8 text-foreground">Monthly sales</h1>
+      <h1 className="text-2xl mb-8 text-foreground">Monthly sales</h1>
       <div className="w-full h-[400px] bg-card rounded-xl p-4 border border-border">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
@@ -64,9 +66,9 @@ const Dashboard = () => {
         </ResponsiveContainer>
       </div>
       
-      <h2 className="text-2xl  mt-8 mb-4 text-foreground">Project planning</h2>
-      <div className="bg-card rounded-xl p-4 border border-border h-64">
-        {/* Project planning content will go here in future iterations */}
+      <h2 className="text-2xl mt-8 mb-4 text-foreground">Project planning</h2>
+      <div className="bg-card rounded-xl p-4 border border-border h-[80vh]">
+        <Gantt />
       </div>
     </div>
   );
